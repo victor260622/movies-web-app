@@ -164,12 +164,12 @@ const widthClass = computed(() => (props.fullWidth ? "w-full" : "w-auto"));
 
 const baseClasses = computed(() =>
   [
-    "block rounded-md border shadow-sm placeholder-gray-400",
-    "focus:outline-none focus:ring-2",
+    "block rounded-md border border-[rgb(38,38,38)] shadow-sm placeholder-gray-400 bg-[rgb(20,20,20)] text-white",
+    "focus:outline-none focus:ring-2 focus:ring-[rgb(90,90,90)]",
     "disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed",
     hasError.value
-      ? "border-red-500 focus:ring-red-500 focus:border-red-500"
-      : "border-gray-300",
+      ? "border-[rgb(38,38,38)] focus:ring-red-500 focus:border-red-500"
+      : "border-[rgb(38,38,38)]",
     paddingLeft.value,
     paddingRight.value,
     sizeClasses.value,

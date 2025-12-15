@@ -1,6 +1,11 @@
 <template>
   <div :class="cardClasses">
-    <slot />
+    <div>
+      <slot name="header" />
+    </div>
+    <div>
+      <slot name="body" />
+    </div>
   </div>
 </template>
 
@@ -27,12 +32,12 @@ const props = withDefaults(defineProps<Props>(), {
   className: "",
 });
 
-const baseClasses = "bg-white";
+const baseClasses = "bg-[rgb(15,15,15)]/85";
 
 const variantClasses: Record<NonNullable<Props["variant"]>, string> = {
   default: "",
   elevated: "border-0",
-  outlined: "border border-[hsl(210_17%_96%)]",
+  outlined: "border-0 border-gray-500",
   ghost: "bg-transparent shadow-none",
 };
 

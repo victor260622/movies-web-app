@@ -1,0 +1,29 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    :width="width"
+    :height="height"
+    viewBox="0 0 28 28"
+    fill="none"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M5.25 6.59479C5.25 4.93097 7.03383 3.87624 8.4917 4.67807L21.9557 12.0833C23.4668 12.9144 23.4668 15.0856 21.9557 15.9167L8.4917 23.3219C7.03383 24.1238 5.25 23.069 5.25 21.4052V6.59479Z"
+      fill="white"
+    />
+  </svg>
+</template>
+
+<script setup lang="ts">
+defineProps({
+  width: {
+    type: [String, Number],
+    default: 28,
+  },
+  height: {
+    type: [String, Number],
+    default: 28,
+  },
+});
+</script>
