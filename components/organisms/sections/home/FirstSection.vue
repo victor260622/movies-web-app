@@ -6,7 +6,7 @@
     <template #body>
       <div class="flex flex-col items-center gap-8 mt-24">
         <div class="text-white max-w-5xl text-center gap-4 px-4">
-          <h1 class="font-bold text-[28px] lg:text-[48px] xl:text-[58px]">
+          <h1 class="font-bold text-[38px] lg:text-[48px] xl:text-[58px]">
             The Best Streaming Experience
           </h1>
           <p class="font-normal text-[#999999] text-base">

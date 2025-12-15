@@ -26,4 +26,3 @@ defineProps<{
   text: string;
 }>();
 </script>
-

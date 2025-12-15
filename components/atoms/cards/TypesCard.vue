@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-[#1A1A1A] rounded-[12px] p-5 flex flex-col items-start border border-[#262626]">
+  <div
+    class="bg-[#1A1A1A] rounded-[12px] p-5 flex flex-col items-start border border-[#262626]"
+  >
     <div class="w-full">
       <slot />
     </div>
