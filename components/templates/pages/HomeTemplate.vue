@@ -1,3 +1,4 @@
 <template>
   <OrganismsSectionsHomeFirstSection />
+  <OrganismsSectionsHomeSecondSection />
 </template>

@@ -7,7 +7,7 @@
         :logo-to="logoTo"
       >
         <template #utils>
-          <AtomsContainersHamburgerButton
+          <AtomsButtonsHamburgerButton
             class="lg:hidden"
             :active="menuOpen"
             @toggle="menuOpen = !menuOpen"
