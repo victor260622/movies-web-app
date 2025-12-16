@@ -17,7 +17,7 @@
       rgba(20, 20, 20, 0.5) 38%,
       rgba(20, 20, 20, 1) 98%
     ),
-    url("/assets/images/login_bg.png");
+    url("/public/images/Banner.png");
   background-size: fill;
   background-position: center;
   background-repeat: no-repeat;

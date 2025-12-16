@@ -44,12 +44,11 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import bgImage from "~/assets/images/login_bg.png";
 const email = ref("");
 const password = ref("");
 
 const bgStyle = {
-  backgroundImage: `url(${bgImage})`,
+  backgroundImage: `url(/public/images/Banner.png)`,
 };
 
 function onSubmit() {
