@@ -5,4 +5,5 @@
   <OrganismsSectionsHomeFourthSection />
   <OrganismsSectionsHomeFifthSection />
   <OrganismsSectionsHomeSixthSection />
+  <MoleculesFooterAppFooter />
 </template>
