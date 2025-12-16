@@ -1,10 +1,23 @@
-import { initializeApp, type FirebaseApp } from "firebase/app";
+import { initializeApp, type FirebaseApp, type FirebaseOptions } from "firebase/app";
+import { useRuntimeConfig } from "nuxt/app";
 
-const firebaseConfig = useRuntimeConfig().firebase;
 let app: FirebaseApp;
 
-export default function useFirebase() {
-  if (!app) app = initializeApp(firebaseConfig);
+export default function useFirebase(): FirebaseApp {
+  if (!app) {
+    const runtimeConfig = useRuntimeConfig().public.firebase as FirebaseOptions;
 
+    const config: FirebaseOptions = {
+      apiKey: runtimeConfig.apiKey,
+      authDomain: runtimeConfig.authDomain,
+      projectId: runtimeConfig.projectId,
+      storageBucket: runtimeConfig.storageBucket,
+      messagingSenderId: runtimeConfig.messagingSenderId,
+      appId: runtimeConfig.appId,
+      measurementId: runtimeConfig.measurementId,
+    };
+
+    app = initializeApp(config);
+  }
   return app;
 }

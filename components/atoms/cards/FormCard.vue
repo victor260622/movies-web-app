@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
   className: "",
 });
 
-const baseClasses = "bg-[rgb(15,15,15)]/85";
+const baseClasses = "bg-[rgb(15,15,15)]/80";
 
 const variantClasses: Record<NonNullable<Props["variant"]>, string> = {
   default: "",

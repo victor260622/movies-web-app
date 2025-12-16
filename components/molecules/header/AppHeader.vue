@@ -20,13 +20,15 @@
               'lg:gap-4',
             ]"
           >
+          <NuxtLink to="/singup">
             <AtomsButtonsCustomButton
               variant="secondary"
               size="lg"
               class="flex items-center gap-4"
             >
-              Sing Up
-            </AtomsButtonsCustomButton>
+            Sing Up
+          </AtomsButtonsCustomButton>
+        </NuxtLink>
             <AtomsButtonsCustomButton
               variant="primary"
               size="lg"
@@ -73,6 +75,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { logoSrc, logoAlt, logoTo, items, cardClass } = props;
+import type { NuxtLink } from "#components";
 import { ref } from "vue";
 const menuOpen = ref(false);
 </script>

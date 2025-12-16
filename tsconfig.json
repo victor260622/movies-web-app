@@ -1,4 +1,14 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "include": ["types", "components", "pages", "composables"]
+  "compilerOptions": {
+    "types": ["nuxt"]
+  },
+  "include": [
+    "types",
+    "components",
+    "pages",
+    "composables",
+    "app.config.ts",
+    "nuxt.config.ts"
+  ]
 }

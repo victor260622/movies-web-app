@@ -5,7 +5,7 @@
     <div class="relative">
       <span
         v-if="$slots.leftIcon"
-        class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400"
+        class="absolute inset-y-0 left-0 pl-3 flex items-center text-[#999999]"
       >
         <slot name="leftIcon" />
       </span>
@@ -88,7 +88,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, nextTick, watch } from "vue";
+import { computed, ref, nextTick, watch, useSlots } from "vue";
 
 interface Props {
   modelValue?: string | number;
@@ -182,7 +182,7 @@ const baseClasses = computed(() =>
 
 const labelClass = computed(() =>
   [
-    "block font-medium text-gray-700 mb-1",
+    "block font-medium text-[#999999] mb-1",
     props.size === "sm"
       ? "text-sm"
       : props.size === "lg"
