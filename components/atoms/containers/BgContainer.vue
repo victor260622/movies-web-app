@@ -1,12 +1,21 @@
 <template>
   <div class="flex flex-col items-center">
-    <div class="bg-container w-full max-w-[1920px]">
+    <div class=" w-full max-w-[1920px]" :class="hasBg ? 'bg-container' : ''">
       <slot name="header" />
       <slot name="center" />
       <slot name="content" />
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+defineProps({
+  hasBg: {
+    type: Boolean,
+    default: true,
+  },
+});
+</script>
 
 <style scoped>
 .bg-container {

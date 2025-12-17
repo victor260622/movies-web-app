@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mt-36">
+  <div class="w-full" :class="subClasses ? subClasses : 'mt-36'">
     <div class="w-full mb-[80px] flex flex-col lg:flex-row justify-between items-start gap-y-4 lg:items-center">
       <div class="flex flex-col">
         <h2 class="text-white text-4xl font-bold mb-2">{{ title }}</h2>
@@ -32,6 +32,7 @@
 interface Props {
   title: string
   subtitle: string
+  subClasses?: string
   gridClass?: string
   isYearly?: boolean
   isMonthly?: boolean

@@ -20,7 +20,7 @@ class FirebaseHelper {
   }
 
   async generateCookie(idToken: string) {
-    const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 días
+    const expiresIn = 60 * 60 * 24 * 5 * 1000;
     const sessionCookie = await getAuth().createSessionCookie(idToken, { expiresIn });
 
     const options: CookieSerializeOptions = {

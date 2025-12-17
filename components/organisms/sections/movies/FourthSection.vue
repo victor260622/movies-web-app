@@ -8,7 +8,7 @@
                   <h2 class="text-white text-[48px] font-bold">Start your free trial today!</h2>
                   <p class="text-[#999999] text-base">This is a clear and concise call to action that encourages users to sign up for a free trial of StreamVibe.</p>
               </div>
-                <AtomsButtonsCustomButton size="lg" variant="primary" @click="$router.push('/movies')">
+                  <AtomsButtonsCustomButton size="lg" variant="primary">
                   Start a Free Trail
               </AtomsButtonsCustomButton>
 
