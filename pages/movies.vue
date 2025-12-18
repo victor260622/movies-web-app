@@ -1,3 +1,3 @@
 <template>
-    <TemplatesPagesMoviesTemplate />
+  <TemplatesPagesMoviesTemplate />
 </template>

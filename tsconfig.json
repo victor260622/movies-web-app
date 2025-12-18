@@ -6,6 +6,7 @@
   "include": [
     "types",
     "components",
+    "middleware",
     "pages",
     "composables",
     "app.config.ts",

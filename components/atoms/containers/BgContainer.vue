@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center">
-    <div class=" w-full max-w-[1920px]" :class="hasBg ? 'bg-container' : ''">
+    <div class="w-full max-w-[1920px]" :class="hasBg ? 'bg-container' : ''">
       <slot name="header" />
       <slot name="center" />
       <slot name="content" />

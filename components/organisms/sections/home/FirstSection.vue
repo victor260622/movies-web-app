@@ -1,6 +1,5 @@
 <template>
-  <MoleculesHeaderAppHeader
-    :has-bg="true">
+  <MoleculesHeaderAppHeader :has-bg="true">
     <template #logo>
       <SvgsLogo class="w-[200px] h-[200px] lg:w-[470px] lg:h-[470px]" />
     </template>

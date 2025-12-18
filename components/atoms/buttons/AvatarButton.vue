@@ -1,4 +1,3 @@
-
 <template>
   <button
     class="flex items-center justify-center rounded-full bg-transparent hover:bg-[#222] transition-colors p-1 focus:outline-none"
@@ -9,7 +8,6 @@
   </button>
 </template>
 
-
 <script setup lang="ts">
-defineEmits(['click'])
+defineEmits(["click"]);
 </script>

@@ -1,4 +1,8 @@
-import { initializeApp, type FirebaseApp, type FirebaseOptions } from "firebase/app";
+import {
+  initializeApp,
+  type FirebaseApp,
+  type FirebaseOptions,
+} from "firebase/app";
 import { useRuntimeConfig } from "nuxt/app";
 
 let app: FirebaseApp;

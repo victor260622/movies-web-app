@@ -20,43 +20,48 @@
               'lg:gap-4',
             ]"
           >
-          <div v-if="currentUser">
-            <MoleculesContainersUserActions />
-          </div>
-          <div v-else class="flex items-center gap-4">
-            <NuxtLink to="/signup">
-              <AtomsButtonsCustomButton
-                variant="secondary"
-                size="lg"
-                class="flex items-center gap-4"
-              >
-                Sign Up
-              </AtomsButtonsCustomButton>
-            </NuxtLink>
-            <NuxtLink to="/login">
-              <AtomsButtonsCustomButton
-                variant="primary"
-                size="lg"
-                class="flex items-center gap-4"
-              >
-                Log In
-              </AtomsButtonsCustomButton>
-            </NuxtLink>
-          </div>
-
+            <div v-if="currentUser">
+              <MoleculesContainersUserActions />
+            </div>
+            <div v-else class="flex items-center gap-4">
+              <NuxtLink to="/signup">
+                <AtomsButtonsCustomButton
+                  variant="secondary"
+                  size="lg"
+                  class="flex items-center gap-4"
+                >
+                  Sign Up
+                </AtomsButtonsCustomButton>
+              </NuxtLink>
+              <NuxtLink to="/login">
+                <AtomsButtonsCustomButton
+                  variant="primary"
+                  size="lg"
+                  class="flex items-center gap-4"
+                >
+                  Log In
+                </AtomsButtonsCustomButton>
+              </NuxtLink>
+            </div>
           </div>
         </template>
       </AtomsContainersNavContainer>
     </template>
 
-    <template #center >
-      <div class="flex flex-col w-full items-center justify-center mt-8" v-if="hasBg">
+    <template #center>
+      <div
+        class="flex flex-col w-full items-center justify-center mt-8"
+        v-if="hasBg"
+      >
         <slot name="logo" />
       </div>
     </template>
 
     <template #content>
-      <div class="flex flex-col w-full items-center justify-center mt-8"  v-if="hasBg">
+      <div
+        class="flex flex-col w-full items-center justify-center mt-8"
+        v-if="hasBg"
+      >
         <slot name="body" />
       </div>
     </template>
@@ -68,12 +73,11 @@ import { useCookie } from "nuxt/app";
 import { onMounted, ref } from "vue";
 import useFirebaseAuth from "~/composables/useAuth";
 
-
 const sessionCookie = useCookie("auth-cookie");
 
 const menuOpen = ref(false);
 
-const {  verifyAuth, currentUser } = useFirebaseAuth();
+const { verifyAuth, currentUser } = useFirebaseAuth();
 onMounted(() => {
   verifyAuth();
 });

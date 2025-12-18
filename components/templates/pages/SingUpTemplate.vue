@@ -61,7 +61,12 @@
           </div>
 
           <div class="mt-7">
-            <AtomsButtonsFormButton type="submit" size="sm" block :disabled="isLoading">
+            <AtomsButtonsFormButton
+              type="submit"
+              size="sm"
+              block
+              :disabled="isLoading"
+            >
               <template v-if="isLoading">
                 <svg
                   class="animate-spin h-4 w-4 mr-2 text-white inline-block"
@@ -85,9 +90,7 @@
                 </svg>
                 Creando cuenta...
               </template>
-              <template v-else>
-                Sign Up
-              </template>
+              <template v-else> Sign Up </template>
             </AtomsButtonsFormButton>
           </div>
         </form>
@@ -101,7 +104,7 @@ import { ref } from "vue";
 import useFirebaseAuth from "~/composables/useAuth";
 
 const { signUp, formInput } = useFirebaseAuth();
-let isLoading = ref(false); 
+let isLoading = ref(false);
 
 const bgStyle = {
   backgroundImage: `url(/images/Banner.png)`,
@@ -109,20 +112,23 @@ const bgStyle = {
 
 function onSubmit() {
   isLoading.value = true;
-    try{
-        if (formInput.value.password !== formInput.value.confirmPassword) {
-            alert("Passwords do not match");
-            return;
-        }
-        if (formInput.value.password.length < 6 || formInput.value.confirmPassword.length < 6) {
-            alert("Password must be at least 6 characters long");
-            return;
-        }
-    } catch (error) {
-        console.error("Error during sign up:", error);
-        alert("An error occurred during sign up. Please try again.");
-        return;
+  try {
+    if (formInput.value.password !== formInput.value.confirmPassword) {
+      alert("Passwords do not match");
+      return;
     }
+    if (
+      formInput.value.password.length < 6 ||
+      formInput.value.confirmPassword.length < 6
+    ) {
+      alert("Password must be at least 6 characters long");
+      return;
+    }
+  } catch (error) {
+    console.error("Error during sign up:", error);
+    alert("An error occurred during sign up. Please try again.");
+    return;
+  }
   signUp();
 }
 </script>

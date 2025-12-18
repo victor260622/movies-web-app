@@ -1,7 +1,16 @@
 <template>
   <div class="flex justify-center">
     <div class="max-w-7xl w-full mt-12 border-b border-red-gradient pb-6 px-4">
-      <MoleculesContainersCarruselContainer :items="movies" :title="'Must - Watch Movies'">
+      <div
+        v-if="pending"
+        class="flex items-center justify-center h-64 text-white"
+      >
+        <span class="animate-pulse">Cargando películas...</span>
+      </div>
+      <MoleculesContainersCarruselContainer
+        :items="movies"
+        :title="'New Releases'"
+      >
         <template #body="{ item }">
           <MoleculesContainersMoviePreview
             :url="item.url"
@@ -23,90 +32,18 @@
 </template>
 
 <script setup lang="ts">
-import type { MoleculesContainersCarruselContainer } from '#components';
-
-const movies = [
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-  {
-    url: "/images/Image.png",
-    alt: "Portada de la película",
-    imdbID: "tt1234567",
-    year: 2023,
-    title: "Título de la Película",
-    description: "Descripción breve o información adicional."
-  },
-]
+import { useAsyncData } from "nuxt/app";
+import { onMounted } from "vue";
+import { useRandomMovies } from "~/composables/useMovies";
+const {
+  data: movies,
+  pending,
+  error,
+  refresh,
+} = await useAsyncData("third", useRandomMovies);
+onMounted(() => {
+  refresh();
+});
 </script>
 
 <style scoped>

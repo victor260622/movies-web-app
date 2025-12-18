@@ -1,37 +1,25 @@
-import type { DecodedIdToken } from "firebase-admin/auth"
-import  useUser  from "~/composables/useUser";
-
+import type { DecodedIdToken } from "firebase-admin/auth";
+import useUser from "~/composables/useUser";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
+  if (import.meta.client) return;
 
-        if(import.meta.client)
-            return
+  const sessionCookie = useCookie("auth-cookie");
+  const { user } = useUser();
 
-        const sessionCookie = useCookie("auth-cookie")
-        const { user } = useUser()
+  const guestRoutes = ["/", "/signup", "/home", "/login"];
 
-      
+  if (!sessionCookie.value && guestRoutes.includes(to.path)) {
+    return;
+  }
 
-        const guestRoutes = ["/", "/signup", "/home", "/login"]
+  if (!sessionCookie.value && !guestRoutes.includes(to.path)) {
+    return navigateTo("/login");
+  }
 
-        if (!sessionCookie.value && guestRoutes.includes(to.path)) {
-            return; 
-        }
+  const response = await $fetch(`/api/user?cookie=${sessionCookie.value}`);
 
-        if (!sessionCookie.value && !guestRoutes.includes(to.path)) {
-            return navigateTo("/login")
-        }
+  if (!response) return navigateTo("/movies");
 
-
-
-        const response = await $fetch(`/api/user?cookie=${sessionCookie.value}`)
-       
-        if (!response)
-            return navigateTo("/movies")
-
-
-        user.value = response?.user as DecodedIdToken
-
-
-    
-})
+  user.value = response?.user as DecodedIdToken;
+});

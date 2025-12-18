@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import { NuxtLink } from '#components'
+import { NuxtLink } from "#components";
 
 defineProps<{
-  title: string
-  links?: string[]
-}>()
+  title: string;
+  links?: string[];
+}>();
 </script>

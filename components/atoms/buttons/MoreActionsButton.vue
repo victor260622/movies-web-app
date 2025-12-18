@@ -10,16 +10,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const emit = defineEmits<{
-  (e: 'click', value: boolean): void
-}>()
+  (e: "click", value: boolean): void;
+}>();
 
-const isActive = ref(false)
+const isActive = ref(false);
 
 function toggleActive() {
-  isActive.value = !isActive.value
-  emit('click', isActive.value)
+  isActive.value = !isActive.value;
+  emit("click", isActive.value);
 }
 </script>

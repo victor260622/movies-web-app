@@ -36,7 +36,12 @@
           />
 
           <!-- Botón con spinner -->
-          <AtomsButtonsFormButton type="submit" size="sm" block :disabled="isLoading">
+          <AtomsButtonsFormButton
+            type="submit"
+            size="sm"
+            block
+            :disabled="isLoading"
+          >
             <template v-if="isLoading">
               <svg
                 class="animate-spin h-4 w-4 mr-2 text-white inline-block"
@@ -60,9 +65,7 @@
               </svg>
               Cargando...
             </template>
-            <template v-else>
-              Sign In
-            </template>
+            <template v-else> Sign In </template>
           </AtomsButtonsFormButton>
         </form>
       </template>
@@ -75,23 +78,23 @@ import { ref } from "vue";
 import useFirebaseAuth from "~/composables/useAuth";
 const { signIn, formInput } = useFirebaseAuth();
 
-let isLoading = ref(false); 
+let isLoading = ref(false);
 
 const bgStyle = {
-    backgroundImage: `url(/images/Banner.png)`,
+  backgroundImage: `url(/images/Banner.png)`,
 };
 
 function onSubmit() {
-    isLoading.value = true;
-      try{
-        if (formInput.value.password.length <= 0 ) {
-            alert("Password must be at least 6 characters long");
-            return;
-        }
-    } catch (error) {
-        alert("An error occurred during sign up. Please try again.");
-        return;
+  isLoading.value = true;
+  try {
+    if (formInput.value.password.length <= 0) {
+      alert("Password must be at least 6 characters long");
+      return;
     }
-    signIn();
+  } catch (error) {
+    alert("An error occurred during sign up. Please try again.");
+    return;
+  }
+  signIn();
 }
 </script>

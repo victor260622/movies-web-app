@@ -53,18 +53,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-let isYearly = ref(false)
-let isMonthly = ref(true)
+let isYearly = ref(false);
+let isMonthly = ref(true);
 
 function handleYearly() {
-  isYearly.value = true
-  isMonthly.value = false
+  isYearly.value = true;
+  isMonthly.value = false;
 }
 
 function handleMonthly() {
-  isYearly.value = false
-  isMonthly.value = true
+  isYearly.value = false;
+  isMonthly.value = true;
 }
 </script>

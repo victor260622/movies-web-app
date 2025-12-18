@@ -11,23 +11,23 @@
         role="menu"
         aria-orientation="vertical"
       >
-
-          <ul class="py-2">
+        <ul class="py-2">
+          <NuxtLink to="/movies">
             <li
               role="menuitem"
               class="px-4 py-2 text-white hover:bg-[#333] cursor-pointer"
             >
-              Lista
+              Movies
             </li>
-            <li
-              role="menuitem"
-              class="px-4 py-2 text-white hover:bg-[#333] cursor-pointer"
-              @click="logOut()"
-            >
-              Cerrar sesión
-            </li>
-          </ul>
-
+          </NuxtLink>
+          <li
+            role="menuitem"
+            class="px-4 py-2 text-white hover:bg-[#333] cursor-pointer"
+            @click="logOut()"
+          >
+            Log Out
+          </li>
+        </ul>
       </div>
     </transition>
   </div>
@@ -35,11 +35,12 @@
 
 <script setup lang="ts">
 import useFirebaseAuth from "~/composables/useAuth";
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import type { NuxtLink } from "#components";
 
 const open = ref(false);
 const root = ref<HTMLElement | null>(null);
-const {  logOut } = useFirebaseAuth();
+const { logOut } = useFirebaseAuth();
 
 function toggleDropdown() {
   open.value = !open.value;
@@ -52,18 +53,20 @@ function handleClickOutside(event: MouseEvent) {
 }
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside);
+  document.addEventListener("click", handleClickOutside);
 });
 
 onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside);
+  document.removeEventListener("click", handleClickOutside);
 });
 </script>
 
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
 }
 .fade-enter-from,
 .fade-leave-to {

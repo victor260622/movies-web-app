@@ -1,8 +1,8 @@
-import { getCookie } from 'h3';
-import { getAuth } from 'firebase-admin/auth';
+import { getCookie } from "h3";
+import { getAuth } from "firebase-admin/auth";
 
 export default defineEventHandler(async (event) => {
-  const token = getCookie(event, 'auth-cookie');
+  const token = getCookie(event, "auth-cookie");
   if (!token) return { user: null };
 
   try {

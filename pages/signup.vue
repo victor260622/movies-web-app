@@ -1,7 +1,5 @@
 <template>
-    <TemplatesPagesSingUpTemplate />
+  <TemplatesPagesSingUpTemplate />
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>

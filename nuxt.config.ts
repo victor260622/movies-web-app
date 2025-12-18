@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/tailwind.css"],
 
   runtimeConfig: {
+    OMDB_API_KEY: process.env.OMDB_API_KEY,
     firebaseAdmin: {
       projectId: process.env.PROJECT_ID,
       clientEmail: process.env.FIREBASE_CONFIG_CLIENT_EMAIL,
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
     },
 
     public: {
+      OMDB_API_URL: process.env.OMDB_API_URL,
       firebase: {
         apiKey: process.env.API_KEY,
         authDomain: process.env.AUTH_DOMAIN,
