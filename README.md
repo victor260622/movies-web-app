@@ -90,3 +90,7 @@ movie-app/
      - Autenticación con JWT para proteger rutas.
 
      - Configuración mediante variables de entorno.
+
+
+## ⚠️ Nota importante
+ DEBE VERIFICAR SU CORREO ELECTRONICO, PORFAVOR CHEQUEE SPAM O COMO noreply@streaming-web-app-7a9ce.firebaseapp.com
