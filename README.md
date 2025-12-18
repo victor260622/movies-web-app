@@ -8,8 +8,8 @@ Permite buscar títulos, ver información detallada (año, director, género, ra
 ## 📑 Tabla de Contenidos
 
 - [Instalación](#-instalación)
-- [Estructura del proyecto](#-estructura-del-proyecto)
 - [Uso](#-uso)
+- [Estructura del proyecto](#-estructura-del-proyecto)
 - [Características](#-características)
 
 ---
@@ -43,17 +43,6 @@ npm run dev
 
 npm run format
 
-### Estructura del proyecto
-
-movie-app/
-├─ components/ # Componentes reutilizables (UI, layouts, etc.)
-├─ pages/ # Rutas principales (movies, search, etc.)
-├─ composables/ # Lógica compartida (fetch, helpers)
-├─ types/ # Tipados de TypeScript
-├─ middleware/ # Middlewares de navegación
-├─ public/ # Recursos estáticos
-├─ server/ # Backend endpoints y fetchs
-└─ nuxt.config.ts # Configuración principal de Nuxt
 
 ## Uso
 
@@ -90,6 +79,19 @@ movie-app/
      - Autenticación con JWT para proteger rutas.
 
      - Configuración mediante variables de entorno.
+
+## 📂 Estructura del proyecto
+
+```bash
+movie-app/
+├─ components/       # Componentes reutilizables (UI, layouts, etc.)
+├─ pages/            # Rutas principales (movies, login, signup, etc.)
+├─ composables/      # Lógica compartida (fetch, helpers)
+├─ types/            # Tipados de TypeScript
+├─ middleware/       # Middlewares de navegación
+├─ public/           # Recursos estáticos
+├─ server/           # Endpoints backend y lógica de API
+└─ nuxt.config.ts    # Configuración principal de Nuxt
 
 
 ## ⚠️ Nota importante
