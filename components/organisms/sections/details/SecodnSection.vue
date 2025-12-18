@@ -6,7 +6,6 @@
     :genre="props.movie.Genre"
     :director="props.movie.Director"
     :writer="props.movie.Writer"
-    class="flex-1"
   />
 </template>
 

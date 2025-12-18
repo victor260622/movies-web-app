@@ -1,75 +1,82 @@
-# Nuxt Minimal Starter
+# 🎬 Movie App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Aplicación en **Nuxt 3** para consultar detalles de películas usando la API de **OMDb**.  
+Permite buscar títulos, ver información detallada (año, director, género, ratings, etc.) y explorar películas de manera rápida y sencilla.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 📑 Tabla de Contenidos
+- [Instalación](#-instalación)
+- [Estructura del proyecto](#-estructura-del-proyecto)
+- [Uso](#-uso)
+- [Características](#-características)
 
-```bash
-# npm
+---
+
+##  Instalación
+
+### Requisitos previos
+- Node.js >= 18
+- npm, yarn o pnpm
+
+### Pasos
+
+# Clonar el repositorio
+git clone git@github.com:victor260622/movies-web-app.git
+
+# Entrar al proyecto
+cd movie-app
+
+# Instalar dependencias
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Iniciar servidor de desarrollo
 npm run dev
 
-# pnpm
-pnpm dev
+# Formatear los archivos
+npm run format
 
-# yarn
-yarn dev
 
-# bun
-bun run dev
-```
+### Estructura del proyecto
 
-## Production
+movie-app/
+├─ components/       # Componentes reutilizables (UI, layouts, etc.)
+├─ pages/            # Rutas principales (movies, search, etc.)
+├─ composables/      # Lógica compartida (fetch, helpers)
+├─ types/            # Tipados de TypeScript
+├─ middleware/       # Middlewares de navegación
+├─ public/           # Recursos estáticos
+├─ server/           # Backend endpoints y fetchs
+└─ nuxt.config.ts    # Configuración principal de Nuxt
 
-Build the application for production:
 
-```bash
-# npm
-npm run build
+##  Uso
+  #  Rutas públicas (no requieren token)
+    / → Página principal.
 
-# pnpm
-pnpm build
+    /login → Formulario de inicio de sesión.
 
-# yarn
-yarn build
+    /signup → Registro de nuevos usuarios.
 
-# bun
-bun run build
-```
+  #  Rutas protegidas (requieren inicio de sesión)
+    /movies → Lista de películas disponibles.
 
-Locally preview production build:
+    /:imdbId → Detalles de una película específica.
 
-```bash
-# npm
-npm run preview
+  #  Flujo de uso
+    Regístrate en /signup para crear tu cuenta. 
 
-# pnpm
-pnpm preview
+    Inicia sesión en /login para obtener tu token.
 
-# yarn
-yarn preview
+    Una vez autenticado, podrás acceder a /movies y /:imdbId.
 
-# bun
-bun run preview
-```
+#  Características
+     -  Detalles completos de cada película (año, director, género, ratings).
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+     -  UI responsiva con TailwindCSS.
+
+     - Integración con la API de OMDb.
+
+     - Autenticación con JWT para proteger rutas.
+
+     - Configuración mediante variables de entorno.

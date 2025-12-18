@@ -11,7 +11,7 @@
       :height="450"
     />
     <div class="flex w-full items-center justify-center">
-      <div class="max-w-7xl w-full flex justify-between gap-5">
+      <div class="max-w-7xl w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-5">
         <div class="flex flex-col">
           <OrganismsSectionsDetailsThirdSection
             v-if="movie"
